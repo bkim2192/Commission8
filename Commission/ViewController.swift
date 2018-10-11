@@ -27,10 +27,12 @@ class ViewController: UIViewController
     {
         let comPay = getInput()
         let totalPay = comPay + Double(basePay)
-        totalPayLabel.text = "Total Pay = $\(totalPay)"
+        let formattedPay = String(format: "%.2f", totalPay)
+        totalPayLabel.text = "Total Pay = $\(formattedPay)"
+        
     }
     
-    func getInput() -> Double //Returns the Double
+    func getInput() -> Double //Returns the Double (->)
     {
         if let data = commissionPayTextField.text, let commissionPay = Double(data){
             return commissionPay
